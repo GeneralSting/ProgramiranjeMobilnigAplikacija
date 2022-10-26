@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PMA_1</string>
+    <string name="til_name">Enter Name</string>
+    <string name="btn_send_name">Next</string>
+    <string name="txt_personal_info"><u><i><b>Personal Info</b></i></u></string>
+    <string name="til_subject">Enter Subject</string>
+    <string name="btn_send_subject">Finish</string>
+    <string name="txt_student_info"><u><i><b>Student Info</b></i></u></string>
+    <string name="txt_name">Name: </string>
+    <string name="txt_subject">Subject: </string>
+    <string name="btn_exit_summary">Exit</string>
+    <string name="txt_summary"><u><i><b>Summary</b></i></u></string>
+</resources>
