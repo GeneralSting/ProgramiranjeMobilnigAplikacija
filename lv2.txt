@@ -1,0 +1,32 @@
+1. Objasnite podjelu View komponenti, te navedite njihove zadaće.
+	->1.ViewGroup - ViewGroupe su zapravo Viewovi koji su namijenjeni raspoređivanju drugih viewova (layouti)
+	 2. View - View klasa mora definirati ponašanje Viewa, te način na koji se on prikazuje na ekranu
+
+2. Objasnite postupak renderiranja Viewova.
+	-> Android sustav vodi brigu o pravilnom iscrtavanju ekrana. Kako bi to bilo moguće, sustav mora imati
+	 informaciju o početnom čvoru hijerarhije budući da se ekran iscrtava od prvog člana pa sve do
+	 posljednjeg. Iscrtavanje je riješeno na način da svaki view vodi brigu o tome da se pravilno iscrta.
+	 Sam proces iscrtavanja se sastoji od dva dijela:
+		1. izračun dimenzija (measure pass)
+		2. postavljanje layouta. (layout pass).
+
+3. Navedite Layoute koje poznajete. Objasnite gdje bi koristili koji layout.
+	-> LinearLayout, ConstraintLayout, FrameLayout, RelativeLayout, GridLayout.
+		-LinearLayout pozicionira svoju djecu jednu pokraj drugog
+		-ConstraintLayout radi na principu specificiranja postavljanja elementa u odnosu na druge elemente. 
+		 Pomoću njega moguće je riješiti brojene probleme pozicioniranja i centriranja više elemenata
+		-FrameLayout služi kao container view. Namjena mu je da “čuva” poziciju za drugi view, koji će prikazivati unutar njega.
+		-RelativeLayout je layout koji raspoređuje svoju djecu na temelju odnosa između njih.
+
+4. Objasnite kako možemo promijeniti način na koji se slika prikazuje unutar ImageView-a.
+	-> ImageView posjeduje logiku za modificiranje sadržaja koji treba prikazati pa je tako moguće pozicionirati sadržaj pomoću scaleType-a ili promijeniti boju sadržaja
+	 pomoću tint parametra (ovo je dio View nadklase).
+
+5. Objasnite tint opciju na Viewovima. Koje kriterije sadržaj View-a mora zadovoljiti da bi tint opcija funkcionirala?
+	-> Mora biti jedna od sljedećih konstantnih vrijednosti:
+		-add
+		-multiply
+		-screen
+		-src_atop
+		-src_in
+		-src_over
