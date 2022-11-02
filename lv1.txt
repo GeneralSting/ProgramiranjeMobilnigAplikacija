@@ -1,0 +1,22 @@
+1. 	Navedite točan redoslijed kojim se pozivaju Activity lifecycle metode, gledano iz točke
+	pokretanja Activity-a te do odlaska Aplikacije u pozadinu.
+		-onCreate() MainActivity -> onStart() MatiActivity -> onResume() MainActivity -> onPause() MainActivity -> onCreate() SecondActivity -> onStart() SecondActivity ->
+		 onResume() SecondActivity -> onStop() MainActivity.
+
+
+2. 	Objasnite postupak dodavanja novog Activity-a.
+		-Desni klik na java datoteku, odaberemo new zatim odaberemo activity i tip activity-a.
+
+
+3.	Objasnite prosljeđivanje informacija između Activity-a.
+		-kreiramo objekt klase Intent, u konstruktor prosljeđujemo trenutni context i activity koji želimo pokrenuti. Na kreirani objekt pozivamo metodu putExtra()
+		 gdje upisujemo ključ kao string i varijablu koju želimo prosljediti. S funkcijom startActivity() prosljeđujemo informaciju na odabrani activity tako da 
+		 u parametar stavimo kreirani Intent objekt.
+		-odabrani activity dohvaća informacije pomoću metoda getString() tako da parametar metode mora biti vrijednost ključa.
+
+4. Objasnite manifest, te navedite stvari koje se moraju registrirati unutar manifesta.
+		-manifest je temeljna datoteka Android projekta koja sadrži informacije o aplikaciji. Manifest je pisan u XML opisnom jeziku te sadrži meta podatke
+		 o aplikaciji, strukturu aplikacije, popis svih komponenti sustava (aktivnosti (Activity-a), servise, pružatelje usluga), 
+		 dozvole te definira osnovne informacije o aplikaciji kao što su ikona, tema i ime.
+
+
