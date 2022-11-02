@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dp"
+    tools:context=".PersonalInfoActivity">
+
+    <Button
+        android:id="@+id/btnSendProfessor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/btn_send_subject"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/profileImageProfessor"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/profile_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/prof_profile_image" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vglCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvStudentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/vglCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImageProfessor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/til_name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvStudentSurname"
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vglCenter"
+        app:layout_constraintTop_toBottomOf="@+id/profileImageProfessor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/til_surnname" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/spaceInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        app:dividerColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStudentName" />
+
+    <TextView
+        android:id="@+id/tvCollegeYear"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/tv_college_year"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/etCollegeYear"
+        app:layout_constraintEnd_toStartOf="@+id/vglImageLeft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spaceInfo" />
+
+    <EditText
+        android:id="@+id/etCollegeYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/et_college_year"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vglImageLeft"
+        app:layout_constraintTop_toBottomOf="@+id/spaceInfo"
+        />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/spaceYear"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        app:dividerColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCollegeYear" />
+
+    <TextView
+        android:id="@+id/tvLectures"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/tv_lectures"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/etLectures"
+        app:layout_constraintEnd_toStartOf="@+id/vglImageLeft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spaceYear" />
+
+    <EditText
+        android:id="@+id/etLectures"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/et_lectures"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vglImageLeft"
+        app:layout_constraintTop_toBottomOf="@+id/spaceYear"
+         />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/spaceLectures"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        app:dividerColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLectures" />
+
+    <TextView
+        android:id="@+id/tvPractices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/tv_practices"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/etPractices"
+        app:layout_constraintEnd_toStartOf="@+id/vglImageLeft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spaceLectures" />
+
+    <EditText
+        android:id="@+id/etPractices"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/et_practices"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vglImageLeft"
+        app:layout_constraintTop_toBottomOf="@+id/spaceLectures"
+        />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/spacePractices"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        app:dividerColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPractices" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vglImageLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="119dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

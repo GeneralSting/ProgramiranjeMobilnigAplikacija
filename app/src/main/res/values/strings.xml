@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PMA_1</string>
     <string name="til_name">Enter Name</string>
+    <string name="til_surnname">Enter Surname</string>
     <string name="btn_send_name">Next</string>
     <string name="txt_personal_info"><u><i><b>Personal Info</b></i></u></string>
     <string name="til_subject">Enter Subject</string>
@@ -10,4 +11,20 @@
     <string name="txt_subject">Subject: </string>
     <string name="btn_exit_summary">Exit</string>
     <string name="txt_summary"><u><i><b>Summary</b></i></u></string>
+    <string name="profile_img">profile image</string>
+    <string name="tv_birth_date">Birth Date:</string>
+    <string name="et_birth_date">Enter Birth Date</string>
+    <string name="tv_college_year">College year:</string>
+    <string name="et_college_year">Enter College Year</string>
+    <string name="tv_lectures">Lectures: </string>
+    <string name="et_lectures">Enter Lectures</string>
+    <string name="tv_practices">Practices: </string>
+    <string name="et_practices">Enter Practices</string>
+    <string name="tv_student_info">Student Info: </string>
+    <string name="tv_subject_info"><i>Subject Info: </i>></string>
+
+
+
+
+
 </resources>

@@ -2,34 +2,59 @@ package com.example.pma_1;
 
 import android.content.Intent;
 
-public class Student {
-    private String Name;
-    private String Subject;
+import com.google.gson.Gson;
 
-    public Student(String name, String subject) {
-        Name = name;
-        Subject = subject;
+import org.json.JSONObject;
+
+import java.io.Serializable;
+
+public class Student {
+    private String name;
+    private String surname;
+    private String birthDate;
+
+    public Student() {
+    }
+
+    public Student(String name, String surname, String birthDate) {
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
-    public String getSubject() {
-        return Subject;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSubject(String subject) {
-        Subject = subject;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public void exitSummary(SummaryActivity activity) {
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void openStudentActivity(PersonalInfoActivity activity, Student student ) {
         activity.finish();
-        Intent intent = new Intent(activity, PersonalInfoActivity.class);
+        Intent intent = new Intent(activity, SubjectInfoActivity.class);
+        intent.putExtra("studentObj", convertObject(student));
         activity.startActivity(intent);
+    }
+
+    public String convertObject(Object object) {
+        Gson gson = new Gson();
+        return gson.toJson((object));
     }
 }
