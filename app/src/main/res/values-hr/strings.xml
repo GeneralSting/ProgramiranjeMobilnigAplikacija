@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PMA_1</string>
+    <string name="til_name">Unesi prezime prof.</string>
+    <string name="til_surnname">Unesi Kolegij</string>
+    <string name="btn_send_name">Dalje</string>
+    <string name="txt_personal_info">Osobni podaci</string>
+    <string name="til_subject">Unesi kolegij</string>
+    <string name="btn_send_subject">Završi</string>
+    <string name="txt_student_info">Podaci o studentu</string>
+    <string name="txt_name">Ime:</string>
+    <string name="txt_subject">Kolegij:</string>
+    <string name="btn_exit_summary">Izađi</string>
+    <string name="txt_summary">Pregled</string>
+    <string name="profile_img">Slika profila</string>
+    <string name="tv_birth_date">Datum rođenja</string>
+    <string name="et_birth_date">Unesi datum rođenja</string>
+    <string name="tv_college_year">Godina studija</string>
+    <string name="et_college_year">Unesi godinu studija</string>
+    <string name="tv_lectures">Predavanja:</string>
+    <string name="et_lectures">Unesi predavanja</string>
+    <string name="tv_practices">Vježbe</string>
+    <string name="et_practices">Unesi vježbe</string>
+    <string name="tv_student_info">Podaci o studentu</string>
+    <string name="tv_subject_info">Podaci o kolgiju</string>
+    <string name="tv_students">Studenti</string>
+    <string name="select_language">Jezik</string>
+    <string name="home_fragment">KUĆA</string>
+    <string name="bottom_nav_home">Početna</string>
+    <string name="bottom_nav_add_student">Dodaj</string>
+    <string name="bottom_nav_subject">Kolegij</string>
+    <string name="add_fragment">Dodaj</string>
+    <string name="student_subject">Kolegij</string>
+    <string name="students_empty">Nema dodanih studenata</string>
+    <string name="til_student_name">Unesi ime</string>
+    <string name="til_student_surname">Unesi prezime</string>
+
+
+
+</resources>

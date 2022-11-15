@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PMA_1</string>
-    <string name="til_name">Enter Name</string>
-    <string name="til_surnname">Enter Surname</string>
+    <string name="til_name">Enter Prof. Surname</string>
+    <string name="til_surnname">Enter Subject</string>
     <string name="btn_send_name">Next</string>
     <string name="txt_personal_info"><u><i><b>Personal Info</b></i></u></string>
     <string name="til_subject">Enter Subject</string>
@@ -22,9 +22,42 @@
     <string name="et_practices">Enter Practices</string>
     <string name="tv_student_info">Student Info: </string>
     <string name="tv_subject_info"><i>Subject Info: </i>></string>
+    <string name="tv_students">Students: </string>
+    <string name="select_language">Langauge</string>
+    <string name="home_fragment">HOME</string>
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_add_student">Add</string>
+    <string name="bottom_nav_subject">Subject</string>
+    <string name="add_fragment">Add</string>
+    <string name="student_subject">Subject</string>
+    <string name="students_empty">No Students added</string>
+    <string name="til_student_name">Enter Name</string>
+    <string name="til_student_surname">Enter Surname</string>
 
 
 
+    <string-array name="students_list">
+        <item>Pavo SKočibušić</item>
+        <item>Fran SKočibušić</item>
+        <item>Antonijo SKočibušić</item>
+        <item>Denis SKočibušić</item>
+        <item>Pavo SKočibušić</item>
+        <item>Fran SKočibušić</item>
+        <item>Antonijo SKočibušić</item>
+        <item>Denis SKočibušić</item>
+    </string-array>
+
+    <string-array name="student_subject">
+        <item>RANDOM SUBJECT</item>
+        <item>RANDOM SUBJECT</item>
+        <item>RANDOM SUBJECT</item>
+        <item>RANDOM SUBJECT</item>
+        <item>RANDOM SUBJECT</item>
+        <item>RANDOM SUBJECT</item>
+        <item>RANDOM SUBJECT</item>
+        <item>RANDOM SUBJECT</item>
+
+    </string-array>
 
 
 </resources>

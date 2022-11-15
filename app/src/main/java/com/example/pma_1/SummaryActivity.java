@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pma_1.Classes.StudentRecyclerList;
 import com.google.gson.Gson;
 
-public class SummaryActivity extends AppCompatActivity {
+import java.io.Serializable;
+import java.util.List;
+
+public class SummaryActivity extends AppCompatActivity implements Serializable{
 
     private EditText etStudentName;
     private EditText etStudentSurname;
@@ -22,11 +25,18 @@ public class SummaryActivity extends AppCompatActivity {
     private EditText etSubjectLectures;
     private EditText etSubjectPractices;
     private Button btnExitSummary;
+    private boolean recivedList = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
+
+        if(getIntent().hasExtra("studentsList"))
+            recivedList = true;
+
+        this.setTitle("PMA - Summary");
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -62,11 +72,20 @@ public class SummaryActivity extends AppCompatActivity {
             btnExitSummary.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    summary.exitSummary(SummaryActivity.this);
+                    summary.exitSummary(SummaryActivity.this, recivedStudent, recivedSubject);
+                    if(recivedList)
+                        summary.exitSummary2(SummaryActivity.this, recivedStudent, recivedSubject, (List<StudentRecyclerList>) getIntent().getSerializableExtra("studentsList"));
+                    else
+                        summary.exitSummary(SummaryActivity.this, recivedStudent, recivedSubject);
                 }
             });
         }
         else
             Toast.makeText(this, "ERROR", Toast.LENGTH_SHORT).show();
+    }
+
+    public String convertObject(Object object) {
+        Gson gson = new Gson();
+        return gson.toJson((object));
     }
 }

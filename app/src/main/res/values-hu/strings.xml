@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">mAD</string>
+    <string name="til_name">MAD</string>
+    <string name="til_surnname">MAD</string>
+    <string name="btn_send_name">MAD</string>
+    <string name="txt_personal_info">MAD</string>
+    <string name="til_subject">MAD</string>
+    <string name="btn_send_subject">MAD</string>
+    <string name="txt_student_info">MAD</string>
+    <string name="txt_name">MAD</string>
+    <string name="txt_subject">MAD</string>
+    <string name="btn_exit_summary">MAD</string>
+    <string name="txt_summary">MAD</string>
+    <string name="profile_img">MAD</string>
+    <string name="tv_birth_date">MAD</string>
+    <string name="et_birth_date">MAD</string>
+    <string name="tv_college_year">MAD</string>
+    <string name="tv_lectures">MAD</string>
+    <string name="et_college_year">MAD</string>
+    <string name="et_lectures">MAD</string>
+    <string name="tv_practices">MAD</string>
+    <string name="et_practices">MAD</string>
+    <string name="tv_student_info">MAD</string>
+    <string name="tv_subject_info">MAD</string>
+    <string name="tv_students">MAD</string>
+    <string name="select_language">MAD</string>
+    <string name="home_fragment">MAD</string>
+    <string name="bottom_nav_home">MAD</string>
+    <string name="bottom_nav_add_student">MAD</string>
+    <string name="bottom_nav_subject">MAD</string>
+    <string name="add_fragment">MAD</string>
+    <string name="student_subject">MAD</string>
+    <string name="students_empty">MAD</string>
+    <string name="til_student_name">MAD</string>
+    <string name="til_student_surname">MAD</string>
+
+
+
+
+</resources>

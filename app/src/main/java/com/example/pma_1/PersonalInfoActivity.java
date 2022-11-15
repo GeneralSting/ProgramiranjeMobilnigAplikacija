@@ -10,10 +10,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.pma_1.Classes.StudentRecyclerList;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class PersonalInfoActivity extends AppCompatActivity {
@@ -21,6 +23,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
     private Button btnSendStudent;
     private TextInputLayout tilName;
     private TextInputLayout tilSurname;
+    private boolean recivedList = false;
 
     final Calendar myCalendar = Calendar.getInstance();
     private EditText birthDate;
@@ -29,6 +32,13 @@ public class PersonalInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_info_activity);
+
+
+
+        if(getIntent().hasExtra("studentsList"))
+            recivedList = true;
+
+        this.setTitle("PMA - Add Student ");
 
         tilName = findViewById(R.id.tvStudentName);
         tilSurname = findViewById(R.id.tvStudentSurname);
@@ -59,7 +69,10 @@ public class PersonalInfoActivity extends AppCompatActivity {
                     Toast.makeText(PersonalInfoActivity.this, "To proceed, fill all fields. ", Toast.LENGTH_SHORT).show();
                 else {
                     Student student = new Student(tilName.getEditText().getText().toString(), tilSurname.getEditText().getText().toString(), birthDate.getText().toString());
-                    student.openStudentActivity(PersonalInfoActivity.this, student);
+                    if(recivedList)
+                        student.openStudentActivity2(PersonalInfoActivity.this, student, (List<StudentRecyclerList>) getIntent().getSerializableExtra("studentsList"));
+                    else
+                        student.openStudentActivity(PersonalInfoActivity.this, student);
                 }
             }
         });

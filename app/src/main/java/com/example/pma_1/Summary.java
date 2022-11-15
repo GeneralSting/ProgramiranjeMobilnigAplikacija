@@ -4,6 +4,12 @@ import android.content.Intent;
 
 import androidx.annotation.NonNull;
 
+import com.example.pma_1.Classes.StudentRecyclerList;
+import com.google.gson.Gson;
+
+import java.io.Serializable;
+import java.util.List;
+
 public class Summary {
     private String studentName;
     private String studentSurname;
@@ -89,9 +95,25 @@ public class Summary {
         this.subjectPractices = subjectPractices;
     }
 
-    public void exitSummary(@NonNull SummaryActivity activity) {
+    public void exitSummary(@NonNull SummaryActivity activity, Student student, Subject subject) {
         activity.finish();
-        Intent intent = new Intent(activity, PersonalInfoActivity.class);
+        Intent intent = new Intent(activity, RecyclerViewStudents.class);
+        intent.putExtra("student", convertObject(student));
+        intent.putExtra("subject", convertObject(subject));
         activity.startActivity(intent);
+    }
+
+    public void exitSummary2(@NonNull SummaryActivity activity, Student student, Subject subject, List<StudentRecyclerList> students) {
+        activity.finish();
+        Intent intent = new Intent(activity, RecyclerViewStudents.class);
+        intent.putExtra("student", convertObject(student));
+        intent.putExtra("subject", convertObject(subject));
+        intent.putExtra("oldStudentsList", (Serializable) students);
+        activity.startActivity(intent);
+    }
+
+    public String convertObject(Object object) {
+        Gson gson = new Gson();
+        return gson.toJson((object));
     }
 }

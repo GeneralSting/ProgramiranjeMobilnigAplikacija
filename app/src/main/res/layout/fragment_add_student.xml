@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    tools:context=".PersonalInfoActivity">
+    tools:context=".Fragments.AddStudent">
 
     <Button
         android:id="@+id/btnSendProfessor"
@@ -21,12 +21,11 @@
         android:id="@+id/profileImageProfessor"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="16dp"
         android:contentDescription="@string/profile_img"
+        android:src="@drawable/profile_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/profile_image" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vglCenter"
@@ -49,7 +48,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/til_student_name" />
+            android:hint="@string/til_name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -65,7 +64,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/til_student_surname" />
+            android:hint="@string/til_surnname" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.divider.MaterialDivider
@@ -102,7 +101,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:dividerColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/etBirthDate" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.pma_1.Classes.StudentRecyclerList;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
+
+import java.util.List;
 
 public class SubjectInfoActivity extends AppCompatActivity {
 
@@ -19,12 +22,19 @@ public class SubjectInfoActivity extends AppCompatActivity {
     private EditText tilLectures;
     private EditText tilPractices;
     private Button btnSendSubject;
+    private boolean recivedList = false;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.subject_info_activity);
+
+        if(getIntent().hasExtra("studentsList"))
+            recivedList = true;
+
+        this.setTitle("PMA - Add Subject ");
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -51,7 +61,10 @@ public class SubjectInfoActivity extends AppCompatActivity {
                         Subject subject = new Subject(tilName.getEditText().getText().toString(), tilSurname.getEditText().getText().toString(),
                                 Integer.parseInt(tilYear.getText().toString()), Integer.parseInt(tilPractices.getText().toString()),
                                 Integer.parseInt(tilLectures.getText().toString()));
-                        subject.openSummaryActivity(SubjectInfoActivity.this, subject, recivedStudent);
+                        if(recivedList)
+                            subject.openSummaryActivity2(SubjectInfoActivity.this, subject, recivedStudent, (List<StudentRecyclerList>) getIntent().getSerializableExtra("studentsList"));
+                        else
+                            subject.openSummaryActivity(SubjectInfoActivity.this, subject, recivedStudent);
                     }
                 }
             });

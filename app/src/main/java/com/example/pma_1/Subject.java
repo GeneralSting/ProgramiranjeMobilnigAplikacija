@@ -4,7 +4,11 @@ import android.content.Intent;
 
 import androidx.annotation.NonNull;
 
+import com.example.pma_1.Classes.StudentRecyclerList;
 import com.google.gson.Gson;
+
+import java.io.Serializable;
+import java.util.List;
 
 public class Subject {
     private String name;
@@ -66,6 +70,15 @@ public class Subject {
         Intent intent = new Intent(activity, SummaryActivity.class);
         intent.putExtra("student", convertObject(recivedStudent));
         intent.putExtra("subject", convertObject(subject));
+        activity.startActivity(intent);
+    }
+
+    public void openSummaryActivity2(@NonNull SubjectInfoActivity activity, Subject subject, Student recivedStudent, List<StudentRecyclerList> students) {
+        activity.finish();
+        Intent intent = new Intent(activity, SummaryActivity.class);
+        intent.putExtra("student", convertObject(recivedStudent));
+        intent.putExtra("subject", convertObject(subject));
+        intent.putExtra("studentsList", (Serializable) students);
         activity.startActivity(intent);
     }
 
