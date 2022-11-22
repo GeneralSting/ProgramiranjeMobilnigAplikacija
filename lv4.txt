@@ -1,0 +1,20 @@
+1. Objasniti Fragment.
+	-> Fragment predstavlja višekratni dio korisničkog sučelja aplikacije. Fragment definira i upravlja vlastitim izgledom,
+	  ima vlastiti životni ciklus i može rukovati vlastitim ulaznim događajima. Fragmenti ne mogu živjeti sami za sebe - moraju biti domaćini aktivnosti ili drugog fragmenta.
+	  Hijerarhija prikaza fragmenta postaje dio hijerarhije activity-a te se na njega "pripaja".
+
+2. Objasniti životni ciklus Fragmenta.
+	->Svaka instanca Fragmenta ima svoj životni ciklus. Kada se korisnik kreće aplikacijom i stupa u interakciju s njom,
+	 fragmenti prolaze kroz različita stanja u svom životnom ciklusu dok se dodaju, uklanjaju i ulaze ili izlaze sa zaslona.
+	 Za upravljanje životnim ciklusom, Fragment implementira LifecycleOwner, izlažući objekt Lifecycle kojemu možete pristupiti putem metode getLifecycle().
+
+3. Objasniti razliku između FragmentPagerAdaptera te FragmentStatePagerAdapter-a. Objasniti razliku u performansama.
+	->FragmentStatePagerAdapter:
+		-s FragmentStatePagerAdapter, vaš nepotrebni fragment je uništen. Transakcija je posvećena potpunom uklanjanju fragmenta iz FragmentManagera vaše aktivnosti.
+		-Stanje u FragmentStatePagerAdapter dolazi iz činjenice da će spremiti paket vašeg fragmenta iz savedInstanceState kada se uništi.
+		 Kada se korisnik vrati, novi fragment će se vratiti pomoću stanja fragmenta.
+	
+	->FragmentPagerAdapter:
+		-Usporedbom FragmentPagerAdapter ne radi ništa slično. Kada fragment više nije potreban. FragmentPagerAdapter poziva detach(Fragment) na transakciji umjesto remove (Fragment).
+		-Ovo uništavanje predstavlja prikaz fragmenta, ali ostavlja instancu fragmenta živom u FragmentManageru.
+		 tako da se fragmenti stvoreni u FragmentPagerAdapteru nikada ne uništavaju.
