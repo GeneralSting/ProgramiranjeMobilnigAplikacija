@@ -10,7 +10,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.pma_1.Classes.StudentRecyclerList;
+import com.example.pma_1.Classes.Student.Student;
+import com.example.pma_1.Classes.StudentsRV.StudentRecyclerList;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.SimpleDateFormat;
@@ -57,7 +58,6 @@ public class PersonalInfoActivity extends AppCompatActivity {
         birthDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 new DatePickerDialog(PersonalInfoActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });

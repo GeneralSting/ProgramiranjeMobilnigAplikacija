@@ -1,10 +1,15 @@
-package com.example.pma_1;
+package com.example.pma_1.Classes.Student;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.pma_1.Classes.StudentRecyclerList;
+import com.example.pma_1.Classes.StudentsRV.StudentRecyclerList;
+import com.example.pma_1.RecyclerViewStudents;
+import com.example.pma_1.SummaryActivity;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
@@ -15,7 +20,7 @@ public class Summary {
     private String studentSurname;
     private String studentBirthDate;
     private String professorName;
-    private String professorSurname;
+    private String subjectName;
     private int subjectYear;
     private int subjectLectures;
     private int subjectPractices;
@@ -25,7 +30,7 @@ public class Summary {
         this.studentSurname = studentSurname;
         this.studentBirthDate = studentBirthDate;
         this.professorName = professorName;
-        this.professorSurname = professorSurname;
+        this.subjectName = professorSurname;
         this.subjectYear = subjectYear;
         this.subjectLectures = subjectLectures;
         this.subjectPractices = subjectPractices;
@@ -63,12 +68,12 @@ public class Summary {
         this.professorName = professorName;
     }
 
-    public String getProfessorSurname() {
-        return professorSurname;
+    public String getSubjectName() {
+        return subjectName;
     }
 
-    public void setProfessorSurname(String professorSurname) {
-        this.professorSurname = professorSurname;
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
 
     public int getSubjectYear() {
@@ -95,17 +100,19 @@ public class Summary {
         this.subjectPractices = subjectPractices;
     }
 
-    public void exitSummary(@NonNull SummaryActivity activity, Student student, Subject subject) {
+    public void exitSummary(@NonNull Activity activity, Student student, Subject subject) {
         activity.finish();
         Intent intent = new Intent(activity, RecyclerViewStudents.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("student", convertObject(student));
         intent.putExtra("subject", convertObject(subject));
         activity.startActivity(intent);
     }
 
-    public void exitSummary2(@NonNull SummaryActivity activity, Student student, Subject subject, List<StudentRecyclerList> students) {
+    public void exitSummary2(@NonNull Activity activity, Student student, Subject subject, List<StudentRecyclerList> students) {
         activity.finish();
         Intent intent = new Intent(activity, RecyclerViewStudents.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("student", convertObject(student));
         intent.putExtra("subject", convertObject(subject));
         intent.putExtra("oldStudentsList", (Serializable) students);

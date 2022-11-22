@@ -1,10 +1,12 @@
-package com.example.pma_1;
+package com.example.pma_1.Classes.Student;
 
 import android.content.Intent;
 
 import androidx.annotation.NonNull;
 
-import com.example.pma_1.Classes.StudentRecyclerList;
+import com.example.pma_1.Classes.StudentsRV.StudentRecyclerList;
+import com.example.pma_1.SubjectInfoActivity;
+import com.example.pma_1.SummaryActivity;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
@@ -12,14 +14,14 @@ import java.util.List;
 
 public class Subject {
     private String name;
-    private String surname;
+    private String subject;
     private int year;
     private int lectures;
     private int practices;
 
     public Subject(String name, String surname, int year, int lectures, int practices) {
         this.name = name;
-        this.surname = surname;
+        this.subject = surname;
         this.year = year;
         this.lectures = lectures;
         this.practices = practices;
@@ -33,12 +35,12 @@ public class Subject {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public int getYear() {

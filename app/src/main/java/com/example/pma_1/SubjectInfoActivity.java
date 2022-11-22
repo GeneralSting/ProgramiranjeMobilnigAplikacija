@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.pma_1.Classes.StudentRecyclerList;
+import com.example.pma_1.Classes.Student.Student;
+import com.example.pma_1.Classes.Student.Subject;
+import com.example.pma_1.Classes.StudentsRV.StudentRecyclerList;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 
@@ -17,7 +19,7 @@ import java.util.List;
 public class SubjectInfoActivity extends AppCompatActivity {
 
     private TextInputLayout tilName;
-    private TextInputLayout tilSurname;
+    private TextInputLayout tilSubject;
     private EditText tilYear;
     private EditText tilLectures;
     private EditText tilPractices;
@@ -43,7 +45,7 @@ public class SubjectInfoActivity extends AppCompatActivity {
             Student recivedStudent = gson.fromJson(getIntent().getStringExtra("studentObj"), Student.class);
 
             tilName = findViewById(R.id.tvStudentName);
-            tilSurname = findViewById(R.id.tvStudentSurname);
+            tilSubject = findViewById(R.id.tvStudentSurname);
             tilYear = findViewById(R.id.etCollegeYear);
             tilLectures = findViewById(R.id.etLectures);
             tilPractices = findViewById(R.id.etPractices);
@@ -52,13 +54,13 @@ public class SubjectInfoActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if(tilName.getEditText().getText().toString().equals("") ||
-                        tilSurname.getEditText().getText().toString().equals("") ||
+                        tilSubject.getEditText().getText().toString().equals("") ||
                         tilYear.getText().toString().equals("") ||
                         tilPractices.getText().toString().equals("") ||
                         tilLectures.getText().toString().equals(""))
                         Toast.makeText(SubjectInfoActivity.this, "To proceed, fill all fields ", Toast.LENGTH_SHORT).show();
                     else {
-                        Subject subject = new Subject(tilName.getEditText().getText().toString(), tilSurname.getEditText().getText().toString(),
+                        Subject subject = new Subject(tilName.getEditText().getText().toString(), tilSubject.getEditText().getText().toString(),
                                 Integer.parseInt(tilYear.getText().toString()), Integer.parseInt(tilPractices.getText().toString()),
                                 Integer.parseInt(tilLectures.getText().toString()));
                         if(recivedList)

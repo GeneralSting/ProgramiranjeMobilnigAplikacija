@@ -1,4 +1,4 @@
-package com.example.pma_1.Classes;
+package com.example.pma_1.Classes.LanguageSpinner;
 
 import android.content.Context;
 import android.content.res.Configuration;

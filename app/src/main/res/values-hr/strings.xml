@@ -34,6 +34,13 @@
     <string name="students_empty">Nema dodanih studenata</string>
     <string name="til_student_name">Unesi ime</string>
     <string name="til_student_surname">Unesi prezime</string>
+    <string name="uncompleted_student">Student nije ispunjen</string>
+    <string name="uncompleted_subject">Kolegij nije ispunjen</string>
+    <string name="tab_layout_student">Student</string>
+    <string name="tab_layout_subject">Kolegij</string>
+    <string name="tab_layout_summary">Pregled</string>
+
+
 
 
 

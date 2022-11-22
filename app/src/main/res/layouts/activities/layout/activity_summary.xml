@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_margin="12dp"
+    tools:context=".PersonalInfoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+
+        <Button
+            android:id="@+id/btnExitSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_exit_summary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/spacePractices" />
+
+        <ImageView
+            android:id="@+id/profileImageStudent"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/profile_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/summary_image" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vglCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            />
+
+        <EditText
+            android:id="@+id/tvStudentName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="16sp"
+            android:editable="false"
+            app:layout_constraintEnd_toStartOf="@+id/vglCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudent" />
+
+        <EditText
+            android:id="@+id/tvStudentSurname"
+            android:layout_width="191dp"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vglCenter"
+            app:layout_constraintTop_toTopOf="@+id/tvStudentName" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/spaceInfo"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudentName" />
+
+        <TextView
+            android:id="@+id/tvStudentBirthDateLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:editable="false"
+            android:gravity="center_vertical"
+            android:text="@string/tv_birth_date"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvStudentBirthDate"
+            app:layout_constraintEnd_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spaceInfo" />
+
+        <EditText
+            android:id="@+id/tvStudentBirthDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/et_birth_date"
+            android:inputType="date"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintTop_toBottomOf="@+id/spaceInfo" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vglImageLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="119dp" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudentBirthDate" />
+
+        <TextView
+            android:id="@+id/studentInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:editable="false"
+            android:gravity="center"
+            android:text="Student Info: "
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileImageStudent" />
+
+        <TextView
+            android:id="@+id/tvStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:text="Student: "
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/studentInfo" />
+
+        <TextView
+            android:id="@+id/tvSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:editable="false"
+            android:gravity="center"
+            android:text="Subject Info: "
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:editable="false"
+            android:text="Professor: "
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubject" />
+
+        <EditText
+            android:id="@+id/tvProfessorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:editable="false"
+            android:text="TextView"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/vglCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <EditText
+            android:id="@+id/tvProfessorSurname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:editable="false"
+            android:text="TextView"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vglCenter"
+            app:layout_constraintTop_toTopOf="@+id/tvProfessorName" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/spaceProfessorName"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfessorName" />
+
+        <TextView
+            android:id="@+id/tvCollegeYearLabel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:editable="false"
+            android:gravity="center_vertical"
+            android:text="Year: "
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spaceYear"
+            app:layout_constraintEnd_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spaceProfessorName"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/tvCollegeYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:editable="false"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintTop_toBottomOf="@+id/spaceProfessorName" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/spaceYear"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCollegeYear" />
+
+        <TextView
+            android:id="@+id/tvLecturesLabel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:text="Lectures: "
+            android:editable="false"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLectures"
+            app:layout_constraintEnd_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spaceYear" />
+
+        <EditText
+            android:id="@+id/tvLectures"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:editable="false"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintTop_toBottomOf="@+id/spaceYear" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/spaceLectures"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLecturesLabel" />
+
+        <TextView
+            android:id="@+id/tvPracticesLabel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:editable="false"
+            android:text="Practices: "
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPractices"
+            app:layout_constraintEnd_toStartOf="@+id/tvPractices"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spaceLectures" />
+
+        <EditText
+            android:id="@+id/tvPractices"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:editable="false"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vglImageLeft"
+            app:layout_constraintTop_toBottomOf="@+id/spaceLectures" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/spacePractices"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPracticesLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</ScrollView>

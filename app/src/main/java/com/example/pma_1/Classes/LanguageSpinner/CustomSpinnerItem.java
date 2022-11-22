@@ -1,4 +1,4 @@
-package com.example.pma_1.Classes;
+package com.example.pma_1.Classes.LanguageSpinner;
 
 public class CustomSpinnerItem {
 

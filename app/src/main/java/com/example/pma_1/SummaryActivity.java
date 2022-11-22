@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.pma_1.Classes.StudentRecyclerList;
+import com.example.pma_1.Classes.Student.Student;
+import com.example.pma_1.Classes.Student.Subject;
+import com.example.pma_1.Classes.Student.Summary;
+import com.example.pma_1.Classes.StudentsRV.StudentRecyclerList;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
@@ -46,7 +49,7 @@ public class SummaryActivity extends AppCompatActivity implements Serializable{
             Subject recivedSubject = gson.fromJson(getIntent().getStringExtra("subject"), Subject.class);
 
             Summary summary = new Summary(recivedStudent.getName().toString(), recivedStudent.getSurname().toString(), recivedStudent.getBirthDate().toString(),
-                    recivedSubject.getName().toString(), recivedSubject.getSurname().toString(), recivedSubject.getYear(), recivedSubject.getLectures(),
+                    recivedSubject.getName().toString(), recivedSubject.getSubject().toString(), recivedSubject.getYear(), recivedSubject.getLectures(),
                     recivedSubject.getPractices());
 
             btnExitSummary = findViewById(R.id.btnExitSummary);
@@ -63,7 +66,7 @@ public class SummaryActivity extends AppCompatActivity implements Serializable{
             etStudentSurname.setText(summary.getStudentSurname());
             etStudentBirthDate.setText(summary.getStudentBirthDate());
             etProfessorName.setText(summary.getProfessorName());
-            etProfessorSurname.setText(summary.getProfessorSurname());
+            etProfessorSurname.setText(summary.getSubjectName());
             etsubjectYear.setText(""+ summary.getSubjectYear());
             etSubjectLectures.setText(""+ summary.getSubjectLectures());
             etSubjectPractices.setText(""+ summary.getSubjectPractices());

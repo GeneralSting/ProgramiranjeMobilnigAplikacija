@@ -17,12 +17,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pma_1.Classes.CustomSpinnerAdapter;
-import com.example.pma_1.Classes.CustomSpinnerItem;
-import com.example.pma_1.Classes.StudentRecyclerList;
-import com.example.pma_1.Classes.recyclerViewAdapter;
+import com.example.pma_1.Classes.LanguageSpinner.CustomSpinnerAdapter;
+import com.example.pma_1.Classes.LanguageSpinner.CustomSpinnerItem;
+import com.example.pma_1.Classes.Student.Student;
+import com.example.pma_1.Classes.Student.Subject;
+import com.example.pma_1.Classes.StudentsRV.StudentRecyclerList;
+import com.example.pma_1.Classes.StudentsRV.recyclerViewAdapter;
 import com.google.gson.Gson;
 
+import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,13 +56,14 @@ public class RecyclerViewStudents extends AppCompatActivity implements Serializa
         if (extras != null) {
             Gson gson = new Gson();
             if(getIntent().hasExtra("oldStudentsList")) {
+                Toast.makeText(this, "ima", Toast.LENGTH_SHORT).show();
                 tvStudents.setText(R.string.tv_students);
                 skip = true;
                 studentsListEmpty = false;
                 Student recivedStudent = gson.fromJson(getIntent().getStringExtra("student"), Student.class);
                 Subject recivedSubject = gson.fromJson(getIntent().getStringExtra("subject"), Subject.class);
                 studentsList = (ArrayList<StudentRecyclerList>) getIntent().getSerializableExtra("oldStudentsList");
-                studentsList.add(new StudentRecyclerList(recivedStudent.getName(), recivedStudent.getSurname(), recivedSubject.getSurname(), R.drawable.profile_image));
+                studentsList.add(new StudentRecyclerList(recivedStudent.getName(), recivedStudent.getSurname(), recivedSubject.getSubject(), recivedStudent.getProfImage()));
                 RecyclerView recyclerView = findViewById(R.id.studentsRecyclerView);
                 recyclerViewAdapter myAdapter = new recyclerViewAdapter(this, studentsList);
                 recyclerView.setAdapter(myAdapter);
@@ -70,7 +74,7 @@ public class RecyclerViewStudents extends AppCompatActivity implements Serializa
                 studentsListEmpty = false;
                 Student recivedStudent = gson.fromJson(getIntent().getStringExtra("student"), Student.class);
                 Subject recivedSubject = gson.fromJson(getIntent().getStringExtra("subject"), Subject.class);
-                studentsList.add(new StudentRecyclerList(recivedStudent.getName(), recivedStudent.getSurname(), recivedSubject.getSurname(), R.drawable.profile_image));
+                studentsList.add(new StudentRecyclerList(recivedStudent.getName(), recivedStudent.getSurname(), recivedSubject.getSubject(), recivedStudent.getProfImage()));
                 RecyclerView recyclerView = findViewById(R.id.studentsRecyclerView);
                 recyclerViewAdapter myAdapter = new recyclerViewAdapter(this, studentsList);
                 recyclerView.setAdapter(myAdapter);
@@ -128,14 +132,14 @@ public class RecyclerViewStudents extends AppCompatActivity implements Serializa
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RecyclerViewStudents.this.finish();
-                Intent intent = new Intent(getApplicationContext(), PersonalInfoActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CreateNewRecordActivity.class);
                 if(!studentsListEmpty)
                     intent.putExtra("studentsList", (Serializable) studentsList);
                 startActivity(intent);
+                /*Intent intent = new Intent(getApplicationContext(), CreateNewRecordActivity.class);
+                startActivity(intent);*/
             }
         });
-
     }
 
     public void setLocale(String localeName) {
