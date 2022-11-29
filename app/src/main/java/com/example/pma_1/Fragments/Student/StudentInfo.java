@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.pma_1.Classes.Models.College;
 import com.example.pma_1.Classes.Student.Student;
 import com.example.pma_1.CreateNewRecordActivity;
 import com.example.pma_1.R;
@@ -33,6 +34,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 

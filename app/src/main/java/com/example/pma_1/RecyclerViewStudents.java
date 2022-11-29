@@ -63,7 +63,7 @@ public class RecyclerViewStudents extends AppCompatActivity implements Serializa
                 Student recivedStudent = gson.fromJson(getIntent().getStringExtra("student"), Student.class);
                 Subject recivedSubject = gson.fromJson(getIntent().getStringExtra("subject"), Subject.class);
                 studentsList = (ArrayList<StudentRecyclerList>) getIntent().getSerializableExtra("oldStudentsList");
-                studentsList.add(new StudentRecyclerList(recivedStudent.getName(), recivedStudent.getSurname(), recivedSubject.getSubject(), recivedStudent.getProfImage()));
+                studentsList.add(new StudentRecyclerList(recivedStudent.getName(), recivedStudent.getSurname(), recivedSubject.getSubject(), R.drawable.profile_image));
                 RecyclerView recyclerView = findViewById(R.id.studentsRecyclerView);
                 recyclerViewAdapter myAdapter = new recyclerViewAdapter(this, studentsList);
                 recyclerView.setAdapter(myAdapter);
@@ -74,7 +74,7 @@ public class RecyclerViewStudents extends AppCompatActivity implements Serializa
                 studentsListEmpty = false;
                 Student recivedStudent = gson.fromJson(getIntent().getStringExtra("student"), Student.class);
                 Subject recivedSubject = gson.fromJson(getIntent().getStringExtra("subject"), Subject.class);
-                studentsList.add(new StudentRecyclerList(recivedStudent.getName(), recivedStudent.getSurname(), recivedSubject.getSubject(), recivedStudent.getProfImage()));
+                studentsList.add(new StudentRecyclerList(recivedStudent.getName(), recivedStudent.getSurname(), recivedSubject.getSubject(), R.drawable.profile_image));
                 RecyclerView recyclerView = findViewById(R.id.studentsRecyclerView);
                 recyclerViewAdapter myAdapter = new recyclerViewAdapter(this, studentsList);
                 recyclerView.setAdapter(myAdapter);

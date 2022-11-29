@@ -9,9 +9,9 @@ public class StudentRecyclerList implements Serializable {
     private String name;
     private String surname;
     private String subject;
-    private Bitmap image;
+    private int image;
 
-    public StudentRecyclerList(String name, String surname, String subject, Bitmap image) {
+    public StudentRecyclerList(String name, String surname, String subject, int image) {
         this.name = name;
         this.surname = surname;
         this.subject = subject;
@@ -42,11 +42,11 @@ public class StudentRecyclerList implements Serializable {
         this.subject = subject;
     }
 
-    public Bitmap getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }

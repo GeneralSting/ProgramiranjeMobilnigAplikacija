@@ -15,7 +15,6 @@ public class Student {
     private String name;
     private String surname;
     private String birthDate;
-    private Bitmap profImage;
 
     public Student() {
     }
@@ -30,7 +29,6 @@ public class Student {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
-        this.profImage = profImage;
     }
 
     public String getName() {
@@ -56,15 +54,7 @@ public class Student {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
-
-    public Bitmap getProfImage() {
-        return profImage;
-    }
-
-    public void setProfImage(Bitmap profImage) {
-        this.profImage = profImage;
-    }
-
+    
     public void openStudentActivity(PersonalInfoActivity activity, Student student ) {
         activity.finish();
         Intent intent = new Intent(activity, SubjectInfoActivity.class);
